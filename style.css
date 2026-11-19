@@ -1,0 +1,31 @@
+:root {
+  --orange: #e76c1f;
+  --dunkel: #363534;
+  --pfirsich: #fdeadc;
+  --pfirsich-rand: #e7c3ad;
+  --weiss: #ffffff;
+  --grau: #e5e5e5;
+  --blaugruen: #124658;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Palanquin", sans-serif;
+  color: var(--dunkel);
+  background-color: var(--weiss);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+button {
+  font-family: inherit;
+  cursor: pointer;
+}
