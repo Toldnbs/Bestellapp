@@ -29,3 +29,44 @@ button {
   font-family: inherit;
   cursor: pointer;
 }
+
+header {
+  height: 128px;
+  background-color: var(--orange);
+}
+
+.header-inner {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--weiss);
+  text-decoration: none;
+  font-weight: 700;
+}
+
+.logo-text p:first-child {
+  font-size: 18px;
+  line-height: 1.2;
+}
+
+.logo-text p:last-child {
+  font-size: 30px;
+  line-height: 0.8;
+}
+
+.menu-button {
+  width: 60px;
+  height: 60px;
+  border: none;
+  background: none;
+}
