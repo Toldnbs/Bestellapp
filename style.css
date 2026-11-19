@@ -31,6 +31,8 @@ button {
 }
 
 header {
+  position: relative;
+  z-index: 1;
   height: 128px;
   background-color: var(--orange);
 }
@@ -69,4 +71,72 @@ header {
   height: 60px;
   border: none;
   background: none;
+}
+
+.hero {
+  position: relative;
+  max-width: 1440px;
+  margin: -69px auto 0;
+}
+
+.hero-image {
+  width: 100%;
+}
+
+.restaurant-logo {
+  position: absolute;
+  left: 50%;
+  bottom: -82px;
+  transform: translateX(-50%);
+}
+
+.restaurant-info {
+  max-width: 872px;
+  margin: 87px auto 0;
+  text-align: center;
+}
+
+.restaurant-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 26px;
+}
+
+.restaurant-row h1 {
+  width: 308px;
+  height: 75px;
+  line-height: 75px;
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 48px;
+  font-weight: 700;
+}
+
+.restaurant-row h1 span {
+  color: var(--orange);
+}
+
+.rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 5px;
+  border-radius: 4px;
+  background-color: #facaac;
+}
+
+.rating p:first-of-type {
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 20px;
+}
+
+.rating p:last-of-type {
+  font-size: 18px;
+  color: #726d6d;
+}
+
+.restaurant-text {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.2;
 }
