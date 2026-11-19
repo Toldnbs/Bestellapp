@@ -140,3 +140,37 @@ header {
   font-weight: 700;
   line-height: 1.2;
 }
+
+.category {
+  height: 60px;
+  margin-top: 80px;
+  background-color: var(--orange);
+}
+
+.category-inner {
+  max-width: 1440px;
+  height: 100%;
+  margin: 0 auto;
+  padding-left: 167px;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+}
+
+.category-icon {
+  position: relative;
+  top: -12px;
+  height: 91px;
+}
+
+.category h2 {
+  margin-bottom: 16px;
+  font-size: 40px;
+  line-height: 1.2;
+  color: var(--weiss);
+}
+
+.category h2 span {
+  margin-left: 10px;
+  font-weight: 400;
+}
