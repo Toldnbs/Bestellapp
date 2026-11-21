@@ -233,3 +233,12 @@ header {
   line-height: 1.2;
   color: var(--dunkel);
 }
+
+.meal-list {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  max-width: 1440px;
+  margin: 30px auto 0;
+  padding-left: 119px;
+}
