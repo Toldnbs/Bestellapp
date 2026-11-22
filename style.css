@@ -224,6 +224,8 @@ header {
 }
 
 .add-button {
+  width: 115px;
+  height: 30px;
   padding: 5px 8px;
   border: none;
   border-radius: 20px;
