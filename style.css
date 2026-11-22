@@ -244,3 +244,45 @@ header {
   margin: 30px auto 0;
   padding-left: 119px;
 }
+
+.menu {
+  position: relative;
+}
+
+.basket-wrapper {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: max(0px, calc((100% - 1440px) / 2));
+}
+
+.basket {
+  position: sticky;
+  top: 20px;
+  width: 435px;
+  height: 794px;
+  padding-top: 59px;
+  border-radius: 30px 0 0 30px;
+  background-color: var(--dunkel);
+  color: var(--pfirsich);
+  text-align: center;
+}
+
+.basket h2 {
+  font-size: 32px;
+  line-height: 41px;
+}
+
+.basket-empty-text {
+  width: 387px;
+  margin: 57px auto 0;
+  font-size: 24px;
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+.basket-empty-icon {
+  width: 128px;
+  height: 129px;
+  margin: 69px auto 0;
+}
