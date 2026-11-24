@@ -286,3 +286,37 @@ header {
   height: 129px;
   margin: 69px auto 0;
 }
+
+.basket-items {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  width: 340px;
+  height: 355px;
+  margin: 36px auto 0;
+  overflow-y: auto;
+}
+
+.basket-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 20px;
+  border-radius: 20px;
+  background-color: var(--pfirsich);
+  color: var(--dunkel);
+  text-align: left;
+}
+
+.basket-item-name {
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.basket-item-price {
+  margin-left: auto;
+  font-size: 22px;
+  font-weight: 700;
+  line-height: 1.2;
+}
