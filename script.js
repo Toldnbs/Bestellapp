@@ -1,5 +1,6 @@
 let basket = [];
 let deliveryFee = 4.99;
+let confirmationTimer;
 
 function renderMeals(meals, containerId) {
   let container = document.getElementById(containerId);
@@ -92,6 +93,18 @@ function removeFromBasket(index) {
   basket.splice(index, 1);
 
   updatePage();
+}
+
+function buyNow() {
+  basket = [];
+  updatePage();
+  document.getElementById("confirmation").showModal();
+  confirmationTimer = setTimeout(closeConfirmation, 3000);
+}
+
+function closeConfirmation() {
+  clearTimeout(confirmationTimer);
+  document.getElementById("confirmation").close();
 }
 
 updatePage();

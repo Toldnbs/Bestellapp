@@ -383,3 +383,62 @@ header {
   font-weight: 700;
   color: #fbfbfb;
 }
+
+.confirmation {
+  width: 415px;
+  margin: auto;
+  padding: 32px 40px;
+  border: none;
+  border-radius: 30px;
+  background-color: var(--dunkel);
+  color: var(--pfirsich);
+}
+
+.confirmation[open] {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 26px;
+  animation: fade-out 0.5s 2.5s forwards;
+}
+
+.confirmation::backdrop {
+  background-color: rgba(0, 0, 0, 0.4);
+}
+
+@keyframes fade-out {
+  to {
+    opacity: 0;
+  }
+}
+
+.close-button {
+  width: 16px;
+  height: 16px;
+  border: none;
+  background: none;
+}
+
+.confirmation-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 16px;
+  width: 335px;
+  text-align: center;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.confirmation-image {
+  width: 80px;
+  height: 57px;
+}
+
+.confirmation h2 {
+  font-size: 42px;
+}
+
+.confirmation p {
+  font-size: 29px;
+}

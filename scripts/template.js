@@ -94,7 +94,7 @@ function getBasketSummaryTemplate(subtotal, deliveryFee) {
         <p>Total</p>
         <p>${formatPrice(total)}</p>
       </div>
-      <button class="buy-button">Buy now (${formatPrice(total)})</button>
+      <button class="buy-button" onclick="buyNow()">Buy now (${formatPrice(total)})</button>
     </div>
   `;
 }
