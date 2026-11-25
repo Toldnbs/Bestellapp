@@ -348,3 +348,38 @@ header {
   line-height: 1.2;
   color: var(--dunkel);
 }
+
+.basket-summary {
+  width: 340px;
+  margin: 36px auto 0;
+  padding: 0 10px;
+  color: var(--weiss);
+}
+
+.summary-row {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 8px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.summary-total {
+  margin: 12px 0 31px;
+  padding-top: 12px;
+  border-top: 3px solid var(--weiss);
+  font-size: 22px;
+  font-weight: 700;
+}
+
+.buy-button {
+  width: 320px;
+  height: 64px;
+  border: none;
+  border-radius: 60px;
+  background-color: var(--orange);
+  font-size: 32px;
+  font-weight: 700;
+  color: #fbfbfb;
+}

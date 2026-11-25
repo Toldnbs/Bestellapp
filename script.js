@@ -1,4 +1,5 @@
 let basket = [];
+let deliveryFee = 4.99;
 
 function renderMeals(meals, containerId) {
   let container = document.getElementById(containerId);
@@ -23,6 +24,16 @@ function renderBasket() {
     items += getBasketItemTemplate(basket[i], i);
   }
   content.innerHTML = `<div class="basket-items">${items}</div>`;
+  content.innerHTML += getBasketSummaryTemplate(getSubtotal(), deliveryFee);
+}
+
+function getSubtotal() {
+  let subtotal = 0;
+
+  for (let i = 0; i < basket.length; i++) {
+    subtotal += basket[i].price * basket[i].amount;
+  }
+  return subtotal;
 }
 
 function updatePage() {

@@ -76,3 +76,25 @@ function getBasketItemTemplate(item, index) {
     </div>
   `;
 }
+
+function getBasketSummaryTemplate(subtotal, deliveryFee) {
+  let total = subtotal + deliveryFee;
+
+  return `
+    <div class="basket-summary">
+      <div class="summary-row">
+        <p>Subtotal</p>
+        <p>${formatPrice(subtotal)}</p>
+      </div>
+      <div class="summary-row">
+        <p>Delivery fee</p>
+        <p>${formatPrice(deliveryFee)}</p>
+      </div>
+      <div class="summary-row summary-total">
+        <p>Total</p>
+        <p>${formatPrice(total)}</p>
+      </div>
+      <button class="buy-button">Buy now (${formatPrice(total)})</button>
+    </div>
+  `;
+}
