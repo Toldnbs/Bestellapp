@@ -9,6 +9,7 @@ let burgers = [
     name: "All meat burger",
     description: "Beef, Bacon, Dill pickles, Smoked cheese, Ketchup, BBQ sauce",
     price: 15.9,
+
     image: "./assets/img/burger-all-meat.png",
   },
   {
@@ -63,6 +64,7 @@ let salads = [
   {
     name: "Mini green Salad",
     description: "Green salad, Cucumber, Carrots, Parsley, Radishes",
+
     price: 7.9,
     image: "./assets/img/salad-mini-green.png",
   },
@@ -71,6 +73,7 @@ let salads = [
     description:
       "Mixed greens, Cherry tomatoes, Red onion, Mussels, Squid rings, Shrimp, Dijon mustard-lemon dressing with dill",
     price: 16.9,
+
     image: "./assets/img/salad-seafood.png",
   },
   {

@@ -14,14 +14,23 @@ function renderBasket() {
 
   if (basket.length == 0) {
     content.innerHTML = getEmptyBasketTemplate();
+
     return;
   }
 
   let items = "";
   for (let i = 0; i < basket.length; i++) {
-    items += getBasketItemTemplate(basket[i]);
+    items += getBasketItemTemplate(basket[i], i);
   }
   content.innerHTML = `<div class="basket-items">${items}</div>`;
+}
+
+function updatePage() {
+  renderMeals(burgers, "burger-list");
+  renderMeals(pizzas, "pizza-list");
+
+  renderMeals(salads, "salad-list");
+  renderBasket();
 }
 
 function findMeal(name) {
@@ -34,25 +43,44 @@ function findMeal(name) {
   }
 }
 
+function getAmount(name) {
+  for (let i = 0; i < basket.length; i++) {
+    if (basket[i].name == name) {
+      return basket[i].amount;
+    }
+  }
+  return 0;
+}
+
 function addToBasket(name) {
   for (let i = 0; i < basket.length; i++) {
     if (basket[i].name == name) {
-      basket[i].amount++;
-      renderBasket();
+      increaseAmount(i);
       return;
     }
   }
 
   let meal = findMeal(name);
   basket.push({ name: meal.name, price: meal.price, amount: 1 });
-  renderBasket();
+  updatePage();
 }
 
-function init() {
-  renderMeals(burgers, "burger-list");
-  renderMeals(pizzas, "pizza-list");
-  renderMeals(salads, "salad-list");
-  renderBasket();
+function increaseAmount(index) {
+  basket[index].amount++;
+
+  updatePage();
 }
 
-init();
+function decreaseAmount(index) {
+  basket[index].amount--;
+
+  updatePage();
+}
+
+function removeFromBasket(index) {
+  basket.splice(index, 1);
+
+  updatePage();
+}
+
+updatePage();

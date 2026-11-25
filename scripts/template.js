@@ -3,16 +3,30 @@ function formatPrice(price) {
 }
 
 function getMealTemplate(meal) {
+  let amount = getAmount(meal.name);
+
+  let buttonText = "Add to basket";
+
+  let buttonClass = "add-button";
+
+  if (amount > 0) {
+    buttonText = "Added " + amount;
+
+    buttonClass = "add-button added";
+  }
+
   return `
     <div class="meal-card">
       <img class="meal-image" src="${meal.image}" alt="${meal.name}" />
       <div class="meal-info">
         <h3>${meal.name}</h3>
+
         <p>${meal.description}</p>
       </div>
       <div class="meal-side">
         <p class="meal-price">${formatPrice(meal.price)}</p>
-        <button class="add-button" onclick="addToBasket('${meal.name}')">Add to basket</button>
+
+        <button class="${buttonClass}" onclick="addToBasket('${meal.name}')">${buttonText}</button>
       </div>
     </div>
   `;
@@ -27,11 +41,38 @@ function getEmptyBasketTemplate() {
   `;
 }
 
-function getBasketItemTemplate(item) {
+function getDeleteButtonTemplate(index) {
+  return `
+    <button class="basket-button" onclick="removeFromBasket(${index})">
+
+      <img src="./assets/icons/delete.svg" alt="Delete" />
+    </button>
+  `;
+}
+
+function getBasketItemTemplate(item, index) {
+  let topButton = "";
+  let leftButton = getDeleteButtonTemplate(index);
+
+  if (item.amount > 1) {
+    topButton = getDeleteButtonTemplate(index);
+    leftButton = `<button class="basket-button" onclick="decreaseAmount(${index})">-</button>`;
+  }
+
   return `
     <div class="basket-item">
-      <p class="basket-item-name">${item.amount} x ${item.name}</p>
-      <p class="basket-item-price">${formatPrice(item.price * item.amount)}</p>
+      <div class="basket-item-row">
+        <p class="basket-item-name">${item.amount} x ${item.name}</p>
+        ${topButton}
+      </div>
+      <div class="basket-item-row">
+        <div class="quantity">
+          ${leftButton}
+          <span>${item.amount}</span>
+          <button class="basket-button" onclick="increaseAmount(${index})">+</button>
+        </div>
+        <p class="basket-item-price">${formatPrice(item.price * item.amount)}</p>
+      </div>
     </div>
   `;
 }
