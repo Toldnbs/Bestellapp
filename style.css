@@ -442,3 +442,29 @@ header {
 .confirmation p {
   font-size: 29px;
 }
+
+footer {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 72px;
+  height: 128px;
+  margin-top: 120px;
+  padding-bottom: 32px;
+  background-color: var(--orange);
+  font-size: 18px;
+  line-height: 24px;
+  color: var(--weiss);
+}
+
+.copyright {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 180px;
+}
+
+footer a {
+  color: var(--weiss);
+  text-decoration: none;
+}
