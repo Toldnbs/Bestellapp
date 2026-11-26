@@ -2,6 +2,10 @@ let basket = [];
 let deliveryFee = 4.99;
 let confirmationTimer;
 
+function init() {
+  updatePage();
+}
+
 function renderMeals(meals, containerId) {
   let container = document.getElementById(containerId);
   container.innerHTML = "";
@@ -13,6 +17,8 @@ function renderMeals(meals, containerId) {
 
 function renderBasket() {
   let content = document.getElementById("basket-content");
+  let items = "";
+  let scrollPosition = getBasketScrollPosition();
 
   if (basket.length == 0) {
     content.innerHTML = getEmptyBasketTemplate();
@@ -20,11 +26,9 @@ function renderBasket() {
     return;
   }
 
-  let items = "";
   for (let i = 0; i < basket.length; i++) {
     items += getBasketItemTemplate(basket[i], i);
   }
-  let scrollPosition = getBasketScrollPosition();
   content.innerHTML = `<div class="basket-items">${items}</div>`;
   content.innerHTML += getBasketSummaryTemplate(getSubtotal(), deliveryFee);
   document.querySelector(".basket-items").scrollTop = scrollPosition;
@@ -59,12 +63,11 @@ function updatePage() {
 
 function renderBasketCount() {
   let count = 0;
+  let badge = document.getElementById("basket-count");
 
   for (let i = 0; i < basket.length; i++) {
     count += basket[i].amount;
   }
-
-  let badge = document.getElementById("basket-count");
 
   if (count > 0) {
     badge.textContent = count;
@@ -103,6 +106,8 @@ function getAmount(name) {
 }
 
 function addToBasket(name) {
+  let meal = findMeal(name);
+
   for (let i = 0; i < basket.length; i++) {
     if (basket[i].name == name) {
       increaseAmount(i);
@@ -110,7 +115,6 @@ function addToBasket(name) {
     }
   }
 
-  let meal = findMeal(name);
   basket.push({ name: meal.name, price: meal.price, amount: 1 });
   updatePage();
 }
@@ -145,5 +149,3 @@ function closeConfirmation() {
   clearTimeout(confirmationTimer);
   document.getElementById("confirmation").close();
 }
-
-updatePage();

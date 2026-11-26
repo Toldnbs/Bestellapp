@@ -336,13 +336,19 @@ header {
 .quantity {
   display: flex;
   align-items: center;
-  gap: 8px;
+  gap: 2px;
   font-size: 24px;
   font-weight: 600;
   line-height: 1.2;
 }
 
+.quantity span {
+  min-width: 30px;
+  text-align: center;
+}
+
 .basket-button {
+  padding: 0 6px;
   border: none;
   border-radius: 5px;
   background: none;
@@ -851,4 +857,37 @@ footer a {
     order: 1;
     justify-content: center;
   }
+}
+
+.legal-page {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 0;
+}
+
+.legal {
+  flex: 1;
+  width: 100%;
+  max-width: 872px;
+  margin: 0 auto;
+  padding: 40px 20px 0;
+}
+
+.legal h1 {
+  font-family: "Palanquin Dark", sans-serif;
+  font-size: 40px;
+}
+
+.legal h2 {
+  margin-top: 24px;
+  line-height: 1.2;
+  font-size: 22px;
+}
+
+.legal a {
+  display: inline-block;
+  margin-top: 32px;
+  font-weight: 600;
+  color: var(--orange);
 }
