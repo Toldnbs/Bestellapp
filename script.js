@@ -24,8 +24,19 @@ function renderBasket() {
   for (let i = 0; i < basket.length; i++) {
     items += getBasketItemTemplate(basket[i], i);
   }
+  let scrollPosition = getBasketScrollPosition();
   content.innerHTML = `<div class="basket-items">${items}</div>`;
   content.innerHTML += getBasketSummaryTemplate(getSubtotal(), deliveryFee);
+  document.querySelector(".basket-items").scrollTop = scrollPosition;
+}
+
+function getBasketScrollPosition() {
+  let list = document.querySelector(".basket-items");
+
+  if (list) {
+    return list.scrollTop;
+  }
+  return 0;
 }
 
 function getSubtotal() {

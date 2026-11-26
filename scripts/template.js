@@ -43,9 +43,10 @@ function getEmptyBasketTemplate() {
 
 function getDeleteButtonTemplate(index) {
   return `
-    <button class="basket-button" onclick="removeFromBasket(${index})">
+    <button class="basket-button delete-button" onclick="removeFromBasket(${index})">
 
-      <img src="./assets/icons/delete.svg" alt="Delete" />
+      <img class="delete-icon" src="./assets/icons/delete.svg" alt="Delete" />
+      <img class="delete-icon-hover" src="./assets/icons/delete-hover.svg" alt="Delete" />
     </button>
   `;
 }
