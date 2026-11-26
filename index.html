@@ -82,8 +82,11 @@
 
         <div class="meal-list" id="salad-list"></div>
 
-        <div class="basket-wrapper">
+        <div class="basket-wrapper" id="basket-wrapper">
           <aside class="basket">
+            <button class="basket-close" onclick="closeBasket()">
+              <img src="./assets/icons/close.svg" alt="Close" />
+            </button>
             <h2>Your Basket</h2>
 
             <div id="basket-content"></div>
@@ -111,8 +114,9 @@
       <button>
         <img src="./assets/icons/nav-orders.svg" alt="Orders" />
       </button>
-      <button>
+      <button class="nav-basket" onclick="openBasket()">
         <img src="./assets/icons/nav-basket.svg" alt="Basket" />
+        <span id="basket-count"></span>
       </button>
     </nav>
 

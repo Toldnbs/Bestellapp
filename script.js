@@ -54,6 +54,33 @@ function updatePage() {
 
   renderMeals(salads, "salad-list");
   renderBasket();
+  renderBasketCount();
+}
+
+function renderBasketCount() {
+  let count = 0;
+
+  for (let i = 0; i < basket.length; i++) {
+    count += basket[i].amount;
+  }
+
+  let badge = document.getElementById("basket-count");
+
+  if (count > 0) {
+    badge.textContent = count;
+  } else {
+    badge.textContent = "";
+  }
+}
+
+function openBasket() {
+  document.getElementById("basket-wrapper").classList.add("open");
+  document.body.classList.add("no-scroll");
+}
+
+function closeBasket() {
+  document.getElementById("basket-wrapper").classList.remove("open");
+  document.body.classList.remove("no-scroll");
 }
 
 function findMeal(name) {
@@ -109,6 +136,7 @@ function removeFromBasket(index) {
 function buyNow() {
   basket = [];
   updatePage();
+  closeBasket();
   document.getElementById("confirmation").showModal();
   confirmationTimer = setTimeout(closeConfirmation, 3000);
 }
