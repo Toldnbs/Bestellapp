@@ -22,11 +22,12 @@
     <header>
       <div class="header-inner">
         <a class="logo" href="#">
-          <img src="./assets/icons/logo.svg" alt="Logo" />
+          <img class="logo-icon" src="./assets/icons/logo.svg" alt="Logo" />
           <div class="logo-text">
             <p>Bestell</p>
             <p>App</p>
           </div>
+          <img class="logo-mobile" src="./assets/icons/logo-mobile.svg" alt="BestellApp" />
         </a>
         <button class="menu-button">
           <img src="./assets/icons/menu.svg" alt="Menu" />
@@ -58,7 +59,7 @@
         <section class="category">
           <div class="category-inner">
             <img class="category-icon" src="./assets/icons/category-burger.png" alt="Burger" />
-            <h2>Burger &amp; Sandwiches</h2>
+            <h2>Burger <span class="long-title">&amp; Sandwiches</span></h2>
           </div>
         </section>
         <div class="meal-list" id="burger-list"></div>
@@ -66,7 +67,7 @@
         <section class="category">
           <div class="category-inner">
             <img class="category-icon" src="./assets/icons/category-pizza.png" alt="Pizza" />
-            <h2>Pizza <span>(30cm)</span></h2>
+            <h2>Pizza <span class="pizza-size">(30cm)</span></h2>
           </div>
         </section>
         <div class="meal-list" id="pizza-list"></div>
@@ -99,6 +100,21 @@
       <a href="#">Imprint</a>
       <a href="#">Cookie Preferences</a>
     </footer>
+
+    <nav class="mobile-nav">
+      <button>
+        <img src="./assets/icons/nav-home.svg" alt="Home" />
+      </button>
+      <button>
+        <img src="./assets/icons/nav-profile.svg" alt="Profile" />
+      </button>
+      <button>
+        <img src="./assets/icons/nav-orders.svg" alt="Orders" />
+      </button>
+      <button>
+        <img src="./assets/icons/nav-basket.svg" alt="Basket" />
+      </button>
+    </nav>
 
     <dialog class="confirmation" id="confirmation">
       <button class="close-button" onclick="closeConfirmation()">
